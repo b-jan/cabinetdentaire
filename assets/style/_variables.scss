@@ -12,12 +12,11 @@ $light-blue: #dcf1ff;
 $light-yellow: #fff1c8;
 $light-pink: #ffcece;
 $vue-darkest-blue: #34495e;
-$vue-turquoise: #dbf9e7;
+$vue-turquoise: #3b8070;
 $white: #fff;
 $theme-red: #e34a4a;
 $theme-orange: #f7cc36;
 $theme-blue: #4ab2e3;
-$theme-violet: #db76df;
 $theme-pale: #d9d9d9;
 $brand-primary: $vue-green !default;
 $brand-danger: $theme-red;
@@ -27,7 +26,6 @@ $brand-success: $vue-green;
 $light-gray2: #eff4f5;
 $dark-gray: #282828;
 $gray: #adb3b9;
-$violet: #db76df;
 $dark-blue: #0045b6;
 $breadcrumbs-gray: #b4b4b4;
 
@@ -54,12 +52,5 @@ $theme-colors: (
   "pale":       $theme-pale
 );
 
-// Typography
-// -------------------------
-
-//$text-color:            $gray !default;
-
-$font-family-sans-serif : 'Source Sans Pro', sans-serif !default;
-
 //Icons
-$icon-font-path: '../../static/fonts/';
+$icon-font-path: '../../static/fonts';

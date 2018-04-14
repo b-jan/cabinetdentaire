@@ -14,7 +14,8 @@
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
-    "nuxt": "^1.0.0"
+    "nuxt": "^1.0.0",
+    "vue-awesome": "^3.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
@@ -24,6 +25,7 @@
     "eslint-plugin-vue": "^4.0.0",
     "node-sass": "^4.8.3",
     "push-dir": "^0.4.1",
-    "sass-loader": "^6.0.7"
+    "sass-loader": "^6.0.7",
+    "webpack-node-externals": "^1.7.2"
   }
 }

@@ -1,3 +1,5 @@
+const nodeExternals = require('webpack-node-externals')
+
 const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
   router: {
     base: '/cabinetdentaire/'
@@ -5,9 +7,6 @@ const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
 } : {}
 
 module.exports = {
-  /*
-  ** Headers of the page
-  */
   head: {
     title: 'nicolasjan',
     meta: [
@@ -16,21 +15,15 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Cabinet du Docteur JAN - Chirurgien Dentiste' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/fav.ico' }
     ]
   },
-  /*
-  ** Customize the progress bar color
-  */
   loading: { color: '#3B8070' },
-  /*
-  ** Build configuration
-  */
+  css: [
+    { src: '~assets/style/main.scss' }
+  ],
   build: {
-    /*
-    ** Run ESLint on save
-    */
-    extend (config, { isDev, isClient }) {
+    extend (config, { isDev, isClient, isServer }) {
       if (isDev && isClient) {
         config.module.rules.push({
           enforce: 'pre',
@@ -38,6 +31,13 @@ module.exports = {
           loader: 'eslint-loader',
           exclude: /(node_modules)/
         })
+      }
+      if (isServer) {
+        config.externals = [
+          nodeExternals({
+            whitelist: [/es6-promise|\.(?!(?:js|json)$).{1,5}$/i, /^vue-awesome/]
+          })
+        ]
       }
     }
   },
